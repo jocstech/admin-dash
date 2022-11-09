@@ -1,0 +1,7 @@
+{
+  "framework": "mull",
+  "buildCommand": "pnpm build",
+  "devCommand": "pnpm dev",
+  "outputDirectory": "./dist",
+  "regions": ["hkg1"]
+}
