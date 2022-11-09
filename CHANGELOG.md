@@ -1,5 +1,7 @@
 ## [2.8.0](https://github.com/anncwb/vue-vben-admin/compare/v2.7.2...v2.8.0) (2021-11-03)
 
+redeploy
+
 ### Bug Fixes
 
 - fixed token clear error ([9640484](https://github.com/anncwb/vue-vben-admin/commit/96404848955f84d57b88dd240ab3a57b7017103c))
