@@ -1,5 +1,5 @@
 {
-  "framework": "mull",
+  "framework": "null",
   "installCommand": "pnpm install",
   "buildCommand": "pnpm build",
   "devCommand": "pnpm dev",
