@@ -13,15 +13,49 @@
         <span class="flex-1">上次构建时间： {{ lastBuildTime }}</span>
       </div>
     </template>
-    <div><Empty /></div>
+    <div v-if="isLoading"><Spin /></div>
+    <div v-if="users && users.length">
+      <List
+        item-layout="horizontal"
+        :data-source="users"
+        :bordered="true"
+        size="large"
+        class="bg-white"
+      >
+        <template #renderItem="{ item }">
+          <ListItem>
+            <ListItemMeta
+              :description="`${item.nickname} ${item.username} ${item.phone} ${item.email}`"
+            >
+              <template #title>
+                <a href="https://www.antdv.com/">{{ item.first_name }} {{ item.last_name }}</a>
+              </template>
+              <template #avatar> <Avatar :size="64" :src="item.avatar" /> </template>
+            </ListItemMeta>
+          </ListItem>
+        </template>
+      </List>
+      {{ users }}
+    </div>
   </PageWrapper>
 </template>
 <script lang="ts" setup>
-  import { Empty } from 'ant-design-vue';
+  import { onMounted, ref } from 'vue';
+  import { Spin, List, ListItem, ListItemMeta, Avatar } from 'ant-design-vue';
   import { PageWrapper } from '/@/components/Page';
   import { GITHUB_URL } from '/@/settings/siteSetting';
+  import { getUsers } from '/@/api/users';
 
   const { pkg, lastBuildTime } = __APP_INFO__;
 
   const { name } = pkg;
+  const isLoading = ref(false);
+  const users = ref();
+
+  onMounted(async () => {
+    isLoading.value = true;
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    users.value = await getUsers();
+    isLoading.value = false;
+  });
 </script>

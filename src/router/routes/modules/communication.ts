@@ -7,7 +7,7 @@ const about: AppRouteModule = {
   path: '/communication',
   name: 'Communication',
   component: LAYOUT,
-  redirect: '/communication/index',
+  redirect: '/communication/baseline',
   meta: {
     hideChildrenInMenu: false,
     icon: 'ant-design:api-filled',
@@ -16,7 +16,7 @@ const about: AppRouteModule = {
   },
   children: [
     {
-      path: 'index',
+      path: 'baseline',
       name: 'CommunicationPage',
       component: () => import('/@/views/sys/communication/index.vue'),
       meta: {

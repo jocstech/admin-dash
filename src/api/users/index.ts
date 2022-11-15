@@ -8,6 +8,6 @@ enum Api {
 /**
  * @description: getUserInfo
  */
-export function getUserInfo() {
+export function getUsers() {
   return defHttp.get<GetUsersModel>({ url: Api.GetUsers }, { errorMessageMode: 'none' });
 }
