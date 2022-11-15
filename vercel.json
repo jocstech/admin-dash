@@ -1,8 +1,8 @@
 {
   "framework": null,
-  "installCommand": "pnpm install",
-  "buildCommand": "pnpm build",
-  "devCommand": "pnpm dev",
+  "installCommand": "yarn install",
+  "buildCommand": "yarn build",
+  "devCommand": "yarn dev",
   "outputDirectory": "./dist",
   "regions": ["hkg1"]
 }
